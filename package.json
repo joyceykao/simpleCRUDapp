@@ -1,0 +1,22 @@
+{
+  "name": "simplecrudapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "ui": "browser-sync start --proxy=localhost:7000 --files='**/*.css, **/*.ejs, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "nodemon": "^2.0.4"
+  }
+}
