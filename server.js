@@ -49,15 +49,6 @@ app.post('/quotes', (req, res) => {
     .catch(error => console.error(error))
 })
 
-app.get('/', (req, res) => {
-  db.collection('quotes').find().toArray()
-    .then(results => {
-      res.render('index.ejs', { quotes: results })
-    })
-    .catch(error => console.error(error))
-})
-
-
 app.put('/quotes', (req, res) => {
   quotesCollection.findOneAndUpdate(
     { name: 'Yoda' },
@@ -86,6 +77,14 @@ app.delete('/quotes', (req, res) => {
         return res.json('No quote to delete')
       }
       res.json(`Deleted Darth Vadar's quote`)
+    })
+    .catch(error => console.error(error))
+})
+
+app.get('/', (req, res) => {
+  db.collection('quotes').find().toArray()
+    .then(results => {
+      res.render('index.ejs', { quotes: results })
     })
     .catch(error => console.error(error))
 })
